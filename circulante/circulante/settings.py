@@ -129,6 +129,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'circulante.catalogo',
     'emprestimo',
+    'registration', # django_registration
 )
 
 # A sample logging configuration. The only tangible logging
@@ -163,5 +164,6 @@ LOGGING = {
 # configuracoes especificas do circulante
 AUTH_PROFILE_MODULE = 'emprestimo.Participante'
 
+ACCOUNT_ACTIVATION_DAYS = 3 # django-registration: prazo para ativar via e-mail
 
 execfile(os.path.join(PROJECT_PATH, 'settings_local.include'))
