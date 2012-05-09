@@ -1,0 +1,36 @@
+<!-- melhor pratica eh usar load static e em vez de STATIC_URL usar static 'imagem.png'  -->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		{% block cabecalho %}
+		<title>Circulante</title>
+		{% endblock %}
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/basico.css" />
+	</head>
+
+	<body>
+		
+		<div class="header">
+			<div>
+				<!--<a href="index.html" title="Home"><img src="{{ STATIC_URL }}images/circulante-logo.png" alt="circulante" title="Página inicial" /></a>-->
+				<a href="index.html" title="Home"><img src="{% static 'images/circulante-logo.png' %}" alt="circulante" title="Página inicial" /></a>
+			</div>
+		</div>
+		
+		<div class="menu">
+			<div>
+					<a href="{% url busca %}">Busca</a> |
+                    <a href="{% url catalogar %}">Catalogar</a>
+			</div>
+		</div>
+	
+		{% block corpo %}
+		<!-- body -->
+		{% endblock %}
+	
+	</body>
+
+</html>
